@@ -1,10 +1,9 @@
- 
-import './App.css'
+ import Navbar from './components/Navbar.tsx' 
 
-function App() { 
+const App = () => { 
   return (
     <>
-     Hello again
+    <Navbar />
     </>
   )
 }
