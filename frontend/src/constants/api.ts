@@ -104,5 +104,93 @@ export const products: Products[] = [
       "reason": "Selling my old smartphone",
       "place": "COIMBATORE, TAMIL NADU",
       "day": "TODAY"
+    },
+    {
+      "id": 14,
+      "image": "https://apollo.olx.in/v1/files/hz7kshcqzwvf1-IN/image;s=300x600;q=60",
+      "price": "18000",
+      "reason": "Upgrading to a new laptop",
+      "place": "BANGALORE, KARNATAKA",
+      "day": "YESTERDAY"
+    },
+    {
+      "id": 15,
+      "image": "https://apollo.olx.in/v1/files/41a0vgj1802i1-IN/image;s=300x600;q=60",
+      "price": "32000",
+      "reason": "Selling my old bike",
+      "place": "CHENNAI, TAMIL NADU",
+      "day": "3 DAYS AGO"
+    },
+    {
+      "id": 16,
+      "image": "https://apollo.olx.in/v1/files/7fjapq1im6m63-IN/image;s=300x600;q=60",
+      "price": "15000",
+      "reason": "Selling my old tablet",
+      "place": "HYDERABAD, TELANGANA",
+      "day": "TODAY"
+    },
+    {
+      "id": 17,
+      "image": "https://apollo.olx.in/v1/files/xyu48jdlsfmz1-IN/image;s=300x600;q=60",
+      "price": "28000",
+      "reason": "Selling my old desktop",
+      "place": "PUNE, MAHARASHTRA",
+      "day": "2 DAYS AGO"
+    },
+    {
+      "id": 18,
+      "image": "https://apollo.olx.in/v1/files/5rckbt88biqa1-IN/image;s=300x600;q=60",
+      "price": "19000",
+      "reason": "Selling my old headphones",
+      "place": "KOLKATA, WEST BENGAL",
+      "day": "YESTERDAY"
+    },
+    {
+      "id": 19,
+      "image": "https://apollo.olx.in/v1/files/56kid3n821hn1-IN/image;s=300x600;q=60",
+      "price": "24000",
+      "reason": "Selling my old gaming chair",
+      "place": "MUMBAI, MAHARASHTRA",
+      "day": "3 DAYS AGO"
+    },
+    {
+      "id": 20,
+      "image": "https://apollo.olx.in/v1/files/n9xyq5v3zbf6-IN/image;s=300x600;q=60",
+      "price": "16000",
+      "reason": "Selling my old smartwatch",
+      "place": "DELHI, DELHI",
+      "day": "TODAY"
+    },
+    {
+      "id": 21,
+      "image": "https://apollo.olx.in/v1/files/43lkdufruggn3-IN/image;s=300x600;q=60",
+      "price": "30000",
+      "reason": "Selling my old TV",
+      "place": "AHMEDABAD, GUJARAT",
+      "day": "2 DAYS AGO"
+    },
+    {
+      "id": 22,
+      "image": "https://apollo.olx.in/v1/files/74amclme7l541-IN/image;s=300x600;q=60",
+      "price": "20000",
+      "reason": "Selling my old camera",
+      "place": "SURAT, GUJARAT",
+      "day": "YESTERDAY"
+    },
+    {
+      "id": 23,
+      "image": "https://apollo.olx.in/v1/files/hv5c8xro4mfc3-IN/image;s=300x600;q=60",
+      "price": "22000",
+      "reason": "Selling my old laptop bag",
+      "place": "JAIPUR, RAJASTHAN",
+      "day": "3 DAYS AGO"
+    },
+    {
+      "id": 24,
+      "image": "https://apollo.olx.in/v1/files/163kol3njv4j2-IN/image;s=300x600;q=60",
+      "price": "25000",
+      "reason": "Selling my old gaming keyboard",
+      "place": "CHANDIGARH, PUNJAB",
+      "day": "TODAY"
     }
   ]
