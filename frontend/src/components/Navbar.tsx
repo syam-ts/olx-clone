@@ -80,17 +80,17 @@ const Navbar = () => {
           </div>
         )}
 
-        <li className="search flex ml-4 h-12 mt-2 border-2 border-gray-950">
+        <li className="search flex ml-4 h-12 mt-2 border-2 border-gray-950 rounded-md">
           <input placeholder="Find Cars, Mobile Phones and More ...." />
           <img
             className="w-12 p-3 bg-gray-900"
             src="https://static-00.iconduck.com/assets.00/search-icon-1023x1024-cz5u4134.png"
           />
-        </li>
-
-        <li className="font-bold pt-4 ml-12 olx-font">ENGLISH</li>
-        <li className="font-bold pt-4 ml-12 olx-font">Login</li>
-        <li className="font-bold pt-4 ml-10">Sell</li>
+        </li> 
+       <li className="font-bold text-sm pt-4 ml-12 olx-font flex">ENGLISH <img className="w-5 h-6" src="../public/down-arrow.png" /></li>
+       
+        <li className="font-bold  text-sm pt-4 ml-10 olx-font underline">Login</li>
+        <li className="font-bold pt-2 ml-4"><img src="public/sell-logo.png" /></li>
       </ul>
     </div>
   );

@@ -1,10 +1,12 @@
 import React from 'react'
 
 function Header() {
+
+  
   return (
     <div className="border-2 border-gray-200 h-10 font-light text-sm text-gray-500">
         <ul className="flex gap-4 ml-64">
-            <li className="text-gray-950">ALL CATEGORIES</li>
+            <li className="text-gray-950 flex">ALL CATEGORIES <img className="w-5 h-6" src="../public/down-arrow.png" /></li>
             <li>Cars</li>
             <li>Motorcycles</li>
             <li>Mobile Phones</li>
