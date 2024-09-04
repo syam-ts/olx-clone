@@ -14,7 +14,6 @@ const App = () => {
     <Navbar />
     <Header />
     <Banner banner={BANNER_ONE} isLong={false}/>
-    <div className="text-xl">Fresh Recomendations</div>
     <Outlet />
       <Banner banner={BANNER_TWO} isLong={true}/> 
       <LongBanner />
