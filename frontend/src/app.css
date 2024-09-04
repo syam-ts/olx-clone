@@ -40,3 +40,8 @@
   .footerParentDiv .footer p {
     margin: 0;
   }
+
+  .olx-font {
+    font-family: headings
+    Roboto, A2rial, Helvetica, sans-serif;
+  }

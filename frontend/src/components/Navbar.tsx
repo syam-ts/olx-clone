@@ -35,8 +35,8 @@ const Navbar = () => {
                     />
                 </li>
 
-                <li className="font-bold pt-4 ml-12">ENGLISH</li>
-                <li className="font-bold pt-4 ml-12">Login</li>
+                <li className="font-bold pt-4 ml-12 olx-font">ENGLISH</li>
+                <li className="font-bold pt-4 ml-12 olx-font">Login</li>
                 <li className="font-bold pt-4 ml-10">Sell</li>
             </ul>
         </div>

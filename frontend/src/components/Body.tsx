@@ -64,8 +64,8 @@ function Body() {
             );
           })}
       {load && (
-        <div className="w-24 h-10 border border-gray-950 p-2">
-          <button onClick={() => setLoad(false)}>Load more</button>
+        <div className="w-28 h-12 border-2 mt-72 ml-72 rounded-md border-gray-950 hover:border-4 hover:border-gray-950">
+          <button className="olx-font font-bold p-2" onClick={() => setLoad(false)}>Load more</button>
         </div>
       )}
     </div>
