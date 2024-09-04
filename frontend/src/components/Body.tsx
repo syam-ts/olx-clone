@@ -3,10 +3,7 @@ import { useState } from "react";
 import { Link } from 'react-router-dom'
 
 function Body() {
-  const [load, setLoad] = useState(true);
-
-
-
+  const [load, setLoad] = useState(true); 
 
   return (
     <div className="grid grid-cols-4 gap-4 px-96">

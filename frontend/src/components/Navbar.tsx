@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [location, setLocation] = useState(false);
@@ -7,10 +8,13 @@ const Navbar = () => {
     <div>
       <ul className="flex h-16  bg-gray-200">
         <li>
+          <Link to="/body">
           <img
             className="w-10 mt-5 ml-5"
             src="https://upload.wikimedia.org/wikipedia/commons/9/91/Logotyp_OLX_.png"
+            alt="olx-logo"
           />
+          </Link>
         </li>
 
         {!location ? (
