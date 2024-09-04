@@ -42,9 +42,27 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="footer">
-          <p>Other Countries Pakistan - South Africa - Indonesia</p>
-          <p>Free Classifieds in India. © 2006-2021 OLX</p>
+        <div className="footer "> 
+          <ul className="flex gap-44 h-44 p-20">
+            <li>
+              <img className="w-16" src="public/footer-1.png" />
+            </li> 
+            <li>
+              <img className="w-16" src="public/footer-2.png" />
+            </li> 
+            <li>
+              <img className="w-16" src="public/footer-3.png" />
+            </li> 
+            <li>
+              <img className="w-16" src="public/footer-4.png" />
+            </li> 
+            <li>
+              <img className="w-16" src="public/footer-5.png" />
+            </li> 
+            <li>
+              <img className="w-16" src="public/footer-6.png" />
+            </li> 
+          </ul>
         </div>
       </div>
     )
