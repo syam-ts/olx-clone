@@ -1,7 +1,7 @@
 
 <div>
 <h1> Olx Clone </h1>
-<img src"![alt text](public/banner.1.jpg)">
+<img src="public/preview.png" />
 
 
 <h3>An olx clone using React .Added couple of functioalities too. Accordiance are there and single page 
