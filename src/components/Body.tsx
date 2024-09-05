@@ -45,7 +45,8 @@ function Body() {
      </Link>
         );
       })
-    : products.map((product) => {
+    :
+     products.map((product) => {
         return (
           <Link to={`/product/${product.id}`} key={product.id}>
           <div className="border border-gray-300 rounded-md w-[280px]">
@@ -86,4 +87,4 @@ function Body() {
   );
 }
 
-export default Body;
+export default Body

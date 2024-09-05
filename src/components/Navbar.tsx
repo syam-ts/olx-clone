@@ -1,12 +1,13 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react"
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
-  const [location, setLocation] = useState(false);
+  const [location, setLocation] = useState(false)
+  const [language, setLanguage] = useState(false)
 
   return (
     <div>
-      <ul className="flex h-16  bg-gray-200">
+      <ul className="flex h-16  bg-gray-200 navbar">
         <li>
           <Link to="/body">
             <img
@@ -89,9 +90,35 @@ const Navbar = () => {
             src="https://static-00.iconduck.com/assets.00/search-icon-1023x1024-cz5u4134.png"
           />
         </li>
-        <div>
-        <li className="font-bold text-sm pt-4 ml-12 olx-font flex">ENGLISH <img className="w-5 h-6" src="../public/down-arrow.png" /></li>
-        </div>
+       
+       {
+        language ? (
+          <div className="h-48  bg-gray-200 rounded-md relative w-48">
+          <li className="font-bold text-sm pt-4 ml-12 olx-font flex">
+            ENGLISH
+             <img className="w-6 h-6 cursor-pointer"
+           onClick={() => setLanguage(false)}
+          src="public/arrowhead-up.png" />
+         
+          </li>
+          <div className="grid olx-font text-sm gap-3 ml-12 mt-4">
+          <span> * ENGLISH</span>
+           <span> * HINDI</span>
+           <span> * TELUGU</span>
+            </div>
+          </div>
+        ) : (
+          <div className="h-12 rounded-md relative w-48">
+          <li className="font-bold text-sm pt-4 ml-12 olx-font flex">
+            ENGLISH 
+            <img onClick={() => setLanguage(true)}
+            className="w-6 h-6 cursor-pointer" src="../public/down-arrow.png" />
+         
+          </li> 
+          </div>
+        )
+       }
+
         <li className="font-bold  text-sm pt-4 ml-10 olx-font underline">
           Login
         </li>
@@ -103,4 +130,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar

@@ -1,13 +1,13 @@
-import { useParams } from "react-router-dom";
-import { products } from '../constants/product';
+import { useParams } from "react-router-dom"
+import { products } from '../constants/product'
 
 const Product = () => {
-  const { id }: any = useParams();
-  const product = products.find((product) => product.id === parseInt(id));
+  const { id }: any = useParams()
+  const product = products.find((product) => product.id === parseInt(id))
 
 
   if (!product) {
-    return <div>Product not found</div>;
+    return <div>Product not found</div>
   }
 
   return (
@@ -22,7 +22,7 @@ const Product = () => {
         <span className="p-3">Time: {product.day}</span>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Product;
+export default Product

@@ -12,6 +12,7 @@ export const Banner = ({ banner, isLong }: any) => {
   }
 }
 
+
 //middle custom banner
 export const LongBanner = () => {
   return (
