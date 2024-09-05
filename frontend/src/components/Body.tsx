@@ -1,4 +1,4 @@
-import { products } from "../constants/api.ts";
+import { products } from "../constants/product.ts";
 import { useState } from "react";
 import { Link } from 'react-router-dom'
 

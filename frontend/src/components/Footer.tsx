@@ -42,28 +42,35 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="footer "> 
-          <ul className="flex gap-44 h-44 p-20">
+        <div className="footer"> 
+          <ul className="flex gap-20 h-36 p-12  ml-36">
             <li>
-              <img className="w-16" src="public/footer-1.png" />
+              <img className="w-44 ml-44" src="public/footer-1.png" />
             </li> 
+            <li>
+            <span className="h-[100px] ml-5 w-px bg-white inline-block"></span> 
+            </li>
             <li>
               <img className="w-16" src="public/footer-2.png" />
             </li> 
             <li>
-              <img className="w-16" src="public/footer-3.png" />
+              <img className="w-24" src="public/footer-3.png" />
             </li> 
             <li>
-              <img className="w-16" src="public/footer-4.png" />
+              <img className="w-24" src="public/footer-4.png" />
             </li> 
             <li>
-              <img className="w-16" src="public/footer-5.png" />
+              <img className="w-24" src="public/footer-5.png" />
             </li> 
             <li>
-              <img className="w-16" src="public/footer-6.png" />
-            </li> 
+              <img className="w-24" src="public/footer-6.png" />
+            </li>  
           </ul>
+       
         </div>
+       <div className="text-white text-end footer-credit">
+       <span className="text-xs mr-44">All rights reserved © 2006-2024 OLX</span>
+       </div>
       </div>
     )
 }
