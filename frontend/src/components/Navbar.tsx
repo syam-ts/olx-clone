@@ -61,19 +61,19 @@ const Navbar = () => {
               <div>
                 <ul>
                   <li className="mt-8 m-4 h-4 flex">
-                    <img src="public/location.png" />
+                    <img src="/location.png" />
                     <span className="pl-2">Kerala</span>
                   </li>
                   <li className="mt-8 m-4 w-4 h-4 flex">
-                    <img src="public/location.png" />
+                    <img src="/location.png" />
                     <span className="pl-2">Maharashtra</span>
                   </li>
                   <li className="mt-8 m-4 w-4 h-4 flex">
-                    <img src="public/location.png" />
+                    <img src="/location.png" />
                     <span className="pl-2">Karnata</span>
                   </li>
                   <li className="mt-8 m-4 w-4 h-4 flex">
-                    <img src="public/location.png" />
+                    <img src="/location.png" />
                     <span className="pl-2">Tamilnadu</span>
                   </li>
                 </ul>
@@ -96,7 +96,7 @@ const Navbar = () => {
           Login
         </li>
         <li className="font-bold pt-2 ml-4">
-          <img src="public/sell-logo.png" />
+          <img src="/sell-logo.png" />
         </li>
       </ul>
     </div>

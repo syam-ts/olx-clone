@@ -17,7 +17,7 @@ export const LongBanner = () => {
   return (
     <div className="h-[264px] w-full mt-7 bg-gray-100 flex">
       <div className="ml-96">
-        <img src="public/phone-app.webp" />
+        <img src="/phone-app.webp" />
       </div>
       <div className="grid text-center">
         <span className="text-2xl font-semibold pt-12">TRY THE OLX APP</span>
@@ -32,8 +32,8 @@ export const LongBanner = () => {
       <div className="p-16">
         <span className="font-bold text-sm">GET YOUR APP TODAY</span>
         <div className="flex gap-3">
-          <img src="public/appstore_2x.webp" />
-          <img src="public/playstore_2x.webp" />
+          <img src="/appstore_2x.webp" />
+          <img src="/playstore_2x.webp" />
         </div>
       </div>
     </div>
