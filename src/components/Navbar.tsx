@@ -33,7 +33,7 @@ const Navbar = () => {
                     className="w-12 h-5"
                     onClick={() => setLocation(true)}
                   >
-                    <img className="w-6" src="../public/down-arrow.png" />
+                    <img className="w-6" src="../down-arrow.png" />
                   </button>
                 </div>
               </div>
@@ -54,7 +54,7 @@ const Navbar = () => {
                     className="w-12 h-5"
                     onClick={() => setLocation(false)}
                   >
-                    <img className="w-6" src="../public/down-arrow.png" />
+                    <img className="w-6" src="../down-arrow.png" />
                   </button>
                 </div>
               </div>
@@ -98,7 +98,7 @@ const Navbar = () => {
             ENGLISH
              <img className="w-6 h-6 cursor-pointer"
            onClick={() => setLanguage(false)}
-          src="public/arrowhead-up.png" />
+          src="/arrowhead-up.png" />
          
           </li>
           <div className="grid olx-font text-sm gap-3 ml-12 mt-4">
@@ -112,7 +112,7 @@ const Navbar = () => {
           <li className="font-bold text-sm pt-4 ml-12 olx-font flex">
             ENGLISH 
             <img onClick={() => setLanguage(true)}
-            className="w-6 h-6 cursor-pointer" src="../public/down-arrow.png" />
+            className="w-6 h-6 cursor-pointer" src="../down-arrow.png" />
          
           </li> 
           </div>

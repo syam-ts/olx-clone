@@ -22,7 +22,7 @@ function Body() {
             
               <img
                 className="w-8 h-8 text-white bg-white rounded-full absolute ml-60 mt-2"
-                src="public/heart (1).png"
+                src="/heart (1).png"
               />
                 <img
                 className="w-[280px] h-44 p-2 object-cover"
@@ -53,7 +53,7 @@ function Body() {
             <div>
             <img
                 className="w-8 h-8 text-white bg-white rounded-full absolute ml-60 mt-2"
-                src="public/heart (1).png"
+                src="/heart (1).png"
               />
                 <img
                 className="w-[280px] h-44 p-2 object-cover"
