@@ -16,13 +16,16 @@ rendering for better UX.
 * Tailwind CSS</br>
 * React Router</p> 
 
-</br>
 
+</br>
+<span>Live Demo : </span>
+<span>https://olx-clone-murex-three.vercel.app/</span>
+</br>
+</br>
 <span>Clone HTTPS : </span>
 <span>https://github.com/syam-ts/olx-clone.git</span>
 </br>
 <span>Clone SSH : </span>
 <span>git@github.com:syam-ts/olx-clone.git</span>
-<span>Live Demo : </span>
-<span>https://olx-clone-murex-three.vercel.app/</span>
+
 </div>
