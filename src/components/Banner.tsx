@@ -48,10 +48,10 @@ export const PromotedContent = () => {
       {ads.map((ad) => {
         return (
           <div className="w-96 h-80">
-            <img src={ad.img} />
+            <img   className="w-full h-48 object-cover hover:brightness-50 transition duration-300"  src={ad.img} />
            <div className="grid">
-           <span className="text-blue-500 ">Search Ads</span>
-           <span className="olx-font font-bold text-gray-600">{ad.text}</span>
+           <span className="text-blue-500 cursor-pointer">Search Ads</span>
+           <span className="olx-font font-bold text-sm text-gray-600 hover:underline cursor-pointer">{ad.text}</span>
            </div>
           </div>
         );
