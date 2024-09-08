@@ -1,3 +1,5 @@
+import { ads } from "../constants/banner.ts";
+
 export const Banner = ({ banner, isLong }: any) => {
   {
     return banner && isLong ? (
@@ -8,10 +10,9 @@ export const Banner = ({ banner, isLong }: any) => {
       <div className="h-[264px] w-full object-center mt-5 justify-center">
         <img className="h-[230px] w-full justify-center" src={banner} />
       </div>
-    )
+    );
   }
-}
-
+};
 
 //middle custom banner
 export const LongBanner = () => {
@@ -38,7 +39,23 @@ export const LongBanner = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-
+export const PromotedContent = () => {
+  return (
+    <div className="flex flex-wrap gap-3 px-80 ml-10 pt-12">
+      {ads.map((ad) => {
+        return (
+          <div className="w-96 h-80">
+            <img src={ad.img} />
+           <div className="grid">
+           <span className="text-blue-500 ">Search Ads</span>
+           <span className="olx-font font-bold text-gray-600">{ad.text}</span>
+           </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
