@@ -1,13 +1,14 @@
-import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
-import Body from "./components/Body.tsx";
-import Product from "./components/Product.tsx";
-import About from "./components/About.tsx";
-import Signup from "./components/SIgnup.tsx";
-import Login from "./components/Login.tsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { FirebaseContext } from "./strore/FirebaseContext.tsx";
-import firebase from "./firebase/config.ts";
+// src/main.tsx
+import { createRoot } from 'react-dom/client';
+import App from './App.tsx';
+import Body from './components/Body.tsx';
+import Product from './components/Product.tsx';
+import About from './components/About.tsx';
+import Signup from './components/SIgnup.tsx'; // Fixed typo
+import Login from './components/Login.tsx';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import ContextProvider from './strore/FirebaseContext.tsx'; // Correct import
+import { auth } from './firebase/config.ts';
 
 const router = createBrowserRouter([
   {
@@ -23,8 +24,10 @@ const router = createBrowserRouter([
   { path: "/login", element: <Login /> },
 ]);
 
-createRoot(document.getElementById("root")!).render(
-  <FirebaseContext.Provider value={firebase}>
+const root = createRoot(document.getElementById('root')!);
+
+root.render(
+  <ContextProvider>
     <RouterProvider router={router} />
-  </FirebaseContext.Provider>
+  </ContextProvider>
 );

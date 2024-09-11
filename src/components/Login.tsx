@@ -1,29 +1,27 @@
-import { useState, useContext } from 'react';
-import { FirebaseContext } from '../strore/FirebaseContext';
-import Logo from '../olx-logo.png';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import {useNavigate} from 'react-router-dom'
+// src/components/Login.tsx
 
+import { useState, useContext } from 'react';
+import { FirebaseContext } from '../strore/FirebaseContext'; // Fixed path
+import Logo from '../olx-logo.png';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const firebaseApp = useContext(FirebaseContext);
-  const navigate = useNavigate()
+  const { auth } = useContext(FirebaseContext) || {}; // Correctly access context
+  const navigate = useNavigate();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (firebaseApp) {
-      const auth = getAuth(firebaseApp);
-      
-      signInWithEmailAndPassword(auth, email, password)
-        .then(() => {
-          navigate('/body')
-        })
-        .catch((error) => {
-          alert(error.message);
-        });
+    if (auth) {
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        navigate('/');
+      } catch (error) {
+        alert(`Error: ${error.message}`);
+      }
     } else {
       alert('Firebase is not initialized');
     }

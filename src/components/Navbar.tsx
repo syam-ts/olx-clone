@@ -1,13 +1,46 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import React, { useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext, FirebaseContext } from '../strore/FirebaseContext'; // Corrected path
 
 const Navbar = () => {
-  const [location, setLocation] = useState(false)
-  const [language, setLanguage] = useState(false)
 
+
+  const [location, setLocation] = useState(false);
+  const [language, setLanguage] = useState(false);
+  
+  const firebaseContext = useContext(FirebaseContext);
+  const authContext = useContext(AuthContext);
+  
+  const navigate = useNavigate();
+
+  
+
+  if (!authContext ) {
+    return null;
+  }
+  
+  console.log('Print this')
+
+  if (!firebaseContext ) {
+    return null;
+  }
+
+  const { auth } = firebaseContext;
+  const { user } = authContext;
+
+  const handleLogout = () => {
+    if (auth) {
+      auth.signOut().then(() => {
+        navigate('/login');
+      }).catch((error) => {
+        console.error('Logout error', error);
+      });
+    }
+  };
+  
   return (
     <div>
-      <ul className="flex h-16  bg-gray-200 navbar">
+      <ul className="flex h-16  bg-gray-200 ">
         <li>
           <Link to="/body">
             <img
@@ -94,7 +127,7 @@ const Navbar = () => {
        {
         language ? (
           <div className="h-48  bg-gray-200 rounded-md relative w-48">
-          <li className="font-bold text-sm pt-4 ml-12 olx-font flex">
+          <li className="font-bold text-sm pt-4 ml-6 olx-font flex">
             ENGLISH
              <img className="w-6 h-6 cursor-pointer"
            onClick={() => setLanguage(false)}
@@ -109,7 +142,7 @@ const Navbar = () => {
           </div>
         ) : (
           <div className="h-12 rounded-md relative w-48">
-          <li className="font-bold text-sm pt-4 ml-12 olx-font flex">
+          <li className="font-bold text-sm pt-4 ml-6 olx-font flex">
             ENGLISH 
             <img onClick={() => setLanguage(true)}
             className="w-6 h-6 cursor-pointer" src="../down-arrow.png" />
@@ -118,11 +151,18 @@ const Navbar = () => {
           </div>
         )
        }
+      
+     <div>
+     <span className="underline font-bold text-sm">{user  ? `Welcome-${user?.displayName}`  : 'Login'}</span>
 
+     </div>
+     { user && <span className="font-bold"
+     onClick={handleLogout}
+     >Logout</span>}
         <li className="font-bold  text-sm pt-4 ml-10 olx-font underline">
           Login
         </li>
-        <li className="font-bold pt-2 ml-4">
+        <li className="font-bold pt-2 ml-1">
           <img src="/sell-logo.png" />
         </li>
       </ul>
