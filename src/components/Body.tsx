@@ -1,9 +1,9 @@
-import { products } from "../constants/product.ts";
-import { useState } from "react";
+import { products } from "../constants/product.ts"
+import { useState } from "react"
 import { Link } from 'react-router-dom'
 
 function Body() {
-  const [load, setLoad] = useState(true); 
+  const [load, setLoad] = useState(true)
 
   return (
     <div>
@@ -84,7 +84,7 @@ function Body() {
 </div>
     </div>
   
-  );
+  )
 }
 
 export default Body

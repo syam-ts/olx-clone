@@ -1,7 +1,12 @@
 export const BANNER_ONE = "/banner.1.jpg"
 export const BANNER_TWO = "/banner-2.jpg" 
 
-export const ads = [
+    interface Ads {
+        img: string,
+        text: string
+        }
+
+export const ads: Ads[] = [
     {
         img: "public/ads-1.png",
         text: "Unsold Laptops Are Being Sold FOr Next To Nothing"

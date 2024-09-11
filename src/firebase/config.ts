@@ -1,9 +1,7 @@
-// src/firebase/config.ts
-
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+ 
 const firebaseConfig = {
     apiKey: "AIzaSyA5y1bSTMuLOrNG8x9pAXLrsXUvsm8SXcM",
     authDomain: "olx-clone-6c2e1.firebaseapp.com",
@@ -17,4 +15,5 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
 
-export { firebaseApp, auth }; // Exporting as 'firebaseApp' and 'auth'
+export { firebaseApp, auth }; 
+

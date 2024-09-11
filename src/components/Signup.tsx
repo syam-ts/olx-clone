@@ -1,47 +1,47 @@
-import React, { useState, useContext } from 'react';
-import Logo from '../olx-logo.png';
-import { useNavigate } from "react-router-dom";
-import { FirebaseContext } from '../strore/FirebaseContext';
-import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import React, { useState, useContext } from 'react'
+import Logo from '../olx-logo.png'
+import { useNavigate } from "react-router-dom"
+import { FirebaseContext } from '../strore/FirebaseContext'
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
+import { getFirestore, collection, addDoc } from 'firebase/firestore'
 
 export default function Signup() {
-  const navigate = useNavigate();
-  const [userName, setUserName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState<string | null>(null); // State to handle errors
-  const firebaseApp = useContext(FirebaseContext);
+  const navigate = useNavigate()
+  const [userName, setUserName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState<string | null>(null)
+  const firebaseApp = useContext(FirebaseContext)
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
     
     if (firebaseApp) {
-      const auth = getAuth(firebaseApp);
-      const firestore = getFirestore(firebaseApp);
+      const auth = getAuth(firebaseApp)
+      const firestore = getFirestore(firebaseApp)
       
       try {
-        const result = await createUserWithEmailAndPassword(auth, email, password);
-        await updateProfile(result.user, { displayName: userName });
+        const result = await createUserWithEmailAndPassword(auth, email, password)
+        await updateProfile(result.user, { displayName: userName })
         await addDoc(collection(firestore, 'users'), {
           id: result.user.uid,
           username: userName,
           phone: phone
-        });
-        navigate("/login");
+        })
+        navigate("/login")
       } catch (error: any) {
         if (error.code === 'auth/email-already-in-use') {
-          setError('The email address is already in use by another account.');
+          setError('The email address is already in use by another account.')
         } else {
-          setError('An error occurred during signup. Please try again.');
+          setError('An error occurred during signup. Please try again.')
         }
-        console.error('Error during signup:', error);
+        console.error('Error during signup:', error)
       }
     } else {
-      console.error('Firebase app is not initialized.');
+      console.error('Firebase app is not initialized.')
     }
-  };
+  }
 
   return (
     <div>
@@ -102,5 +102,7 @@ export default function Signup() {
         <a href="/login">Login</a>
       </div>
     </div>
-  );
+  )
 }
+
+

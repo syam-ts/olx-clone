@@ -5,7 +5,6 @@ const Product = () => {
   const { id }: any = useParams()
   const product = products.find((product) => product.id === parseInt(id))
 
-
   if (!product) {
     return <div>Product not found</div>
   }

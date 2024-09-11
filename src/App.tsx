@@ -1,16 +1,16 @@
-import React, { useEffect, useContext } from 'react';
-import { Outlet } from 'react-router-dom';
-import Navbar from './components/Navbar.tsx';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import { Banner, LongBanner, PromotedContent } from './components/Banner';
-import { BANNER_ONE, BANNER_TWO } from './constants/banner';
-import { AuthContext, FirebaseContext } from './strore/FirebaseContext.tsx' // Correct the path as needed
-import { onAuthStateChanged } from 'firebase/auth';
+import { useEffect, useContext } from 'react'
+import { Outlet } from 'react-router-dom'
+import Navbar from './components/Navbar.tsx'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import { Banner, LongBanner, PromotedContent } from './components/Banner'
+import { BANNER_ONE, BANNER_TWO } from './constants/banner'
+import { AuthContext, FirebaseContext } from './strore/FirebaseContext.tsx' 
+import { onAuthStateChanged } from 'firebase/auth'
 
 const App = () => {
-  const authContext = useContext(AuthContext);
-  const firebaseContext = useContext(FirebaseContext);
+  const authContext = useContext(AuthContext)
+  const firebaseContext = useContext(FirebaseContext)
 
   useEffect(() => {
     if (firebaseContext && authContext) {
@@ -23,14 +23,13 @@ const App = () => {
             email: user.email || '',
           });
         } else {
-          authContext.setUser(null);
+          authContext.setUser(null) 
         }
-      });
-
-      // Cleanup subscription on unmount
-      return () => unsubscribe();
+      }) 
+       
+      return () => unsubscribe() 
     }
-  }, [firebaseContext, authContext]);
+  }, [firebaseContext, authContext]) 
 
   return (
     <>
@@ -43,7 +42,8 @@ const App = () => {
        <PromotedContent />
     <Footer />
     </>
-  );
-};
+  )
+}
 
-export default App;
+
+export default App

@@ -1,5 +1,3 @@
-
-
 const Header = () => {
 
 
@@ -16,7 +14,7 @@ const Header = () => {
         <li>For Rent:Houses & Apartments</li>
       </ul>
     </div>
-  );
+  )
 }
 
 export default Header

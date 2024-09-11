@@ -1,35 +1,30 @@
-// src/store/FirebaseContext.tsx
-
-import React, { createContext, useState, ReactNode } from 'react';
-import { firebaseApp, auth } from '../firebase/config'; // Correct import
+import { createContext, useState, ReactNode } from 'react'
+import {auth } from '../firebase/config' 
 
 interface AuthContextType {
-  user: { uid: string; displayName?: string; email?: string } | null;
-  setUser: (user: { uid: string; displayName?: string; email?: string } | null) => void;
+  user: { uid: string; displayName?: string; email?: string } | null
+  setUser: (user: { uid: string; displayName?: string; email?: string } | null) => void
 }
 
 interface FirebaseContextType {
-  auth: typeof auth; // Adjusted type
+  auth: typeof auth 
 }
 
-export const FirebaseContext = createContext<FirebaseContextType | null>(null);
-export const AuthContext = createContext<AuthContextType | null>(null);
+export const FirebaseContext = createContext<FirebaseContextType | null>(null)
+export const AuthContext = createContext<AuthContextType | null>(null)
 
 interface Props {
-  children: ReactNode;
+  children: ReactNode
 }
 
 const ContextProvider = ({ children }: Props) => {
-  const [user, setUser] = useState<{ uid: string; displayName?: string; email?: string } | null>(null);
+  const [user, setUser] = useState<{ uid: string; displayName?: string; email?: string } | null>(null) 
 
   const firebaseContextValue: FirebaseContextType = {
     auth,
-  };
+  }
 
-  const authContextValue: AuthContextType = {
-    user,
-    setUser,
-  };
+  const authContextValue: AuthContextType = { user, setUser }
 
   return (
     <FirebaseContext.Provider value={firebaseContextValue}>
@@ -37,7 +32,7 @@ const ContextProvider = ({ children }: Props) => {
         {children}
       </AuthContext.Provider>
     </FirebaseContext.Provider>
-  );
-};
+  )
+}
 
-export default ContextProvider;
+export default ContextProvider

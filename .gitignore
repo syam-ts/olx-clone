@@ -2,5 +2,6 @@
 node_modules
 dist
  ts.conifg.app.json
+ tailwind.config.js
  
  

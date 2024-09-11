@@ -1,27 +1,19 @@
-import React, { useState, useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext, FirebaseContext } from '../strore/FirebaseContext'; // Corrected path
+import { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext, FirebaseContext } from "../strore/FirebaseContext";
 
 const Navbar = () => {
-
-
   const [location, setLocation] = useState(false);
   const [language, setLanguage] = useState(false);
-  
   const firebaseContext = useContext(FirebaseContext);
   const authContext = useContext(AuthContext);
-  
   const navigate = useNavigate();
 
-  
-
-  if (!authContext ) {
+  if (!authContext) {
     return;
   }
-  
- 
 
-  if (!firebaseContext ) {
+  if (!firebaseContext) {
     return null;
   }
 
@@ -30,14 +22,17 @@ const Navbar = () => {
 
   const handleLogout = () => {
     if (auth) {
-      auth.signOut().then(() => {
-        navigate('/login');
-      }).catch((error) => {
-        console.error('Logout error', error);
-      });
+      auth
+        .signOut()
+        .then(() => {
+          navigate("/login");
+        })
+        .catch((error) => {
+          console.error("Logout error", error);
+        });
     }
   };
-  
+
   return (
     <div>
       <ul className="flex h-16  bg-gray-200 ">
@@ -55,8 +50,8 @@ const Navbar = () => {
           <div className="bg-white mt-3 h-12 ml-8 relative border-2 border-gray-950 rounded-md">
             <li className="grid w-64 mt-2 bg-clip-text">
               <div className="flex">
-                <div className="w-12">
-                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAADCCAMAAAB6zFdcAAAAeFBMVEX///8AAAD8/PwEBATV1dWkpKTa2trz8/Pv7+/e3t61tbW6urqnp6dSUlI1NTXDw8OWlpbm5uYhISEwMDB2dnaurq7KyspaWloeHh4SEhJsbGyLi4tEREQqKioMDAxKSko9PT2Pj491dXVnZ2d+fn5XV1eCgoKdnZ0mZH/+AAAFFUlEQVR4nO2bDXOqOhCGQwBR/ERr1WqtrT36///hTSAbRPBKnIHK+j5n5rRVMpPd7GY3m0UIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAHan+CRElvenofD4vp4NEms9fBJlK+j4bf3o5k1UYpF/+7dzaQwa/F+J7vvm53w74q8AY/HJyLb1Pv39N/3iKzaOVsJx7N1F6OEyVs0i+9qAkCxa3NWCMYZUIxjoQcqvE9P3bKvDTb0d/Pc+G0Pbd310ueFEV/uXfH1KyjBBSvF+sd/pjsvqdhaPw+2e8KGjB9+YJRx1IMbWypxyXSS5mNAhXBaPYDLgpQTtCTCrQ/69HUemh/vfeu1BTwCxhkqkV5IscV0sXzbJtMXOMAa/wIMXgYg/8jURVBqA/S1ZkCXtvHnHSgdrkN7kK3m89lUocmqxRaWLV4hRb4MOEP9+bJHceDfIU4iwYhcjYJgVf5b3wmmTtmS3BYxQcIrsfHu4urN4UjOP43oFJbFBC/ZIZfPZrDelZnS2Z6EDHBEOv5piYBqxZqEDp4IMkCmuuqhQ/NITJ8Skheb7qj4k8k09smptXm2ypTNRzcO6YtsVhgzNrj70xg4/K7PAWC7ONskiUAsoQe046iGlYvVDyxEhyBZUauI2M1sZ8YgY5AhUQl06jbFLhvTU0rxZJ6MAYOa1mXnX6bGpmbZGLMnYeSyH1/gnj2QmNJCdnr6YC7K2zdnd4M5K4x/lv40VuG8kzcjQ6CJztYGl0MGtkXu0hxdjowL0UMDU6ODUysxaRxqv37qlOYPPLjiMPmSAb992djtydz5aluWffuNsBlaKPDUyrXSjC3SullqGDRud9QdAVmvueODQjt43Mq02oiBQ4jxyZkecGZtUmUpyMJHXraDQwPzTFHT83SlsedTz+KbGpZ6duIfZ5oSj/6bqYtgzZbSvQyxltHlpOMiD/gQPnc6FrZ5Qsu6W8UvzLVMAgLEi1vZvCoNtAezHjHlCeD1tIqr+/6+e2xhXmXd8OUr6MNJPaZWX1XETNq50/NabYi/ewboVY6tKLT/klB6I59d3VPTvKNKJmDcyNTq09QuoxWtW1g8h29Ha/mKiRQu7JsOum/vam+l/H82RD2ppIzTX1WvNntoGLQ2A0jK1Q73c789OMImtNU/kRn/a8vLnGm94V62yeVDoIGOlA18mJ5R25Th7FBP+RivzTkvbjkDu8/V+ITHbepQ5SJbBQg34b4ZA3qs5jUWUL+pOzdw2brmWd/C5ICerHrjLsy2HpVSdG7qCXsj/P5VL53+i60Jx8T7ziGw5WCUy0oNQQTYoS7mZTunRIpttDyQsK7sBCCzot+KgQcL5YV3xacgc2OrDNCLlP3Pyz8EX3y6oXDBZ3X+5TTlJWSMDFHVLC0lt9BRUo5xjaGyaG7pDR3960As0ouriUKLgDIx0IEZ1vvfC7o76bK0vwfVZHyIzgZF95tY4xnlHdTJaUoOkxcgeZyiL78exIadPiLcsVzNnAvA7J2R0KyyntCUra41EaRys3xteibAneI40cXabaEhZ8nKEGaUpUVkL81/Nqn5I7HBlti7WocIfDi6lAVLjD7uV0IEp5wpFNPaU+RUvg8pabG4UQ6bO5gXWiGCIfaPhlghSDrI3jp/tv9TyMMoXB8jxMKm8lXgKZS86pnubMC4sOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsOU/1cYjfUutt58AAAAASUVORK5CYII=" />
+                <div className="w-10">
+                  <img src="https://static.vecteezy.com/system/resources/previews/009/652/218/non_2x/magnifying-glass-icon-isolated-on-white-background-search-illustration-vector.jpg" />
                 </div>
                 <div>
                   <input placeholder="Search city, area or locality" />
@@ -76,8 +71,11 @@ const Navbar = () => {
           <div className="bg-white mt-3 h-72 ml-8 relative border-2 border-gray-950 rounded-md">
             <li className="grid w-64 mt-2 bg-clip-text">
               <div className="flex">
-                <div className="w-12">
-                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAADCCAMAAAB6zFdcAAAAeFBMVEX///8AAAD8/PwEBATV1dWkpKTa2trz8/Pv7+/e3t61tbW6urqnp6dSUlI1NTXDw8OWlpbm5uYhISEwMDB2dnaurq7KyspaWloeHh4SEhJsbGyLi4tEREQqKioMDAxKSko9PT2Pj491dXVnZ2d+fn5XV1eCgoKdnZ0mZH/+AAAFFUlEQVR4nO2bDXOqOhCGQwBR/ERr1WqtrT36///hTSAbRPBKnIHK+j5n5rRVMpPd7GY3m0UIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAHan+CRElvenofD4vp4NEms9fBJlK+j4bf3o5k1UYpF/+7dzaQwa/F+J7vvm53w74q8AY/HJyLb1Pv39N/3iKzaOVsJx7N1F6OEyVs0i+9qAkCxa3NWCMYZUIxjoQcqvE9P3bKvDTb0d/Pc+G0Pbd310ueFEV/uXfH1KyjBBSvF+sd/pjsvqdhaPw+2e8KGjB9+YJRx1IMbWypxyXSS5mNAhXBaPYDLgpQTtCTCrQ/69HUemh/vfeu1BTwCxhkqkV5IscV0sXzbJtMXOMAa/wIMXgYg/8jURVBqA/S1ZkCXtvHnHSgdrkN7kK3m89lUocmqxRaWLV4hRb4MOEP9+bJHceDfIU4iwYhcjYJgVf5b3wmmTtmS3BYxQcIrsfHu4urN4UjOP43oFJbFBC/ZIZfPZrDelZnS2Z6EDHBEOv5piYBqxZqEDp4IMkCmuuqhQ/NITJ8Skheb7qj4k8k09smptXm2ypTNRzcO6YtsVhgzNrj70xg4/K7PAWC7ONskiUAsoQe046iGlYvVDyxEhyBZUauI2M1sZ8YgY5AhUQl06jbFLhvTU0rxZJ6MAYOa1mXnX6bGpmbZGLMnYeSyH1/gnj2QmNJCdnr6YC7K2zdnd4M5K4x/lv40VuG8kzcjQ6CJztYGl0MGtkXu0hxdjowL0UMDU6ODUysxaRxqv37qlOYPPLjiMPmSAb992djtydz5aluWffuNsBlaKPDUyrXSjC3SullqGDRud9QdAVmvueODQjt43Mq02oiBQ4jxyZkecGZtUmUpyMJHXraDQwPzTFHT83SlsedTz+KbGpZ6duIfZ5oSj/6bqYtgzZbSvQyxltHlpOMiD/gQPnc6FrZ5Qsu6W8UvzLVMAgLEi1vZvCoNtAezHjHlCeD1tIqr+/6+e2xhXmXd8OUr6MNJPaZWX1XETNq50/NabYi/ewboVY6tKLT/klB6I59d3VPTvKNKJmDcyNTq09QuoxWtW1g8h29Ha/mKiRQu7JsOum/vam+l/H82RD2ppIzTX1WvNntoGLQ2A0jK1Q73c789OMImtNU/kRn/a8vLnGm94V62yeVDoIGOlA18mJ5R25Th7FBP+RivzTkvbjkDu8/V+ITHbepQ5SJbBQg34b4ZA3qs5jUWUL+pOzdw2brmWd/C5ICerHrjLsy2HpVSdG7qCXsj/P5VL53+i60Jx8T7ziGw5WCUy0oNQQTYoS7mZTunRIpttDyQsK7sBCCzot+KgQcL5YV3xacgc2OrDNCLlP3Pyz8EX3y6oXDBZ3X+5TTlJWSMDFHVLC0lt9BRUo5xjaGyaG7pDR3960As0ouriUKLgDIx0IEZ1vvfC7o76bK0vwfVZHyIzgZF95tY4xnlHdTJaUoOkxcgeZyiL78exIadPiLcsVzNnAvA7J2R0KyyntCUra41EaRys3xteibAneI40cXabaEhZ8nKEGaUpUVkL81/Nqn5I7HBlti7WocIfDi6lAVLjD7uV0IEp5wpFNPaU+RUvg8pabG4UQ6bO5gXWiGCIfaPhlghSDrI3jp/tv9TyMMoXB8jxMKm8lXgKZS86pnubMC4sOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsOU/1cYjfUutt58AAAAASUVORK5CYII=" />
+                <div className="w-10">
+                  <img
+                    src="https://static.vecteezy.com/system/resources/previews/009/652/218/non_2x/magnifying-glass-icon-isolated-on-white-background-search-illustration-vector.jpg"
+                    alt="search-icon"
+                  />
                 </div>
                 <div>
                   <input placeholder="Search city, area or locality" />
@@ -123,62 +121,58 @@ const Navbar = () => {
             src="https://static-00.iconduck.com/assets.00/search-icon-1023x1024-cz5u4134.png"
           />
         </li>
-       
-       {
-        language ? (
-          <div className="h-48 bg-gray-200 rounded-md relative w-48">
-          <li className="font-bold text-sm pt-4 ml-6 olx-font flex">
-            ENGLISH
-             <img className="w-6 h-6 cursor-pointer"
-           onClick={() => setLanguage(false)}
-          src="/arrowhead-up.png" />
-         
-          </li>
-          <div className="grid olx-font text-sm gap-3 ml-12 mt-4">
-          <span> * ENGLISH</span>
-           <span> * HINDI</span>
-           <span> * TELUGU</span>
+
+        {language ? (
+          <div className="h-48 bg-gray-200 rounded-md relative w-44">
+            <li className="font-bold text-sm pt-4 ml-6 olx-font flex">
+              ENGLISH
+              <img
+                className="w-6 h-6 cursor-pointer"
+                onClick={() => setLanguage(false)}
+                src="/arrowhead-up.png"
+              />
+            </li>
+            <div className="grid olx-font text-sm gap-3 ml-12 mt-4">
+              <span> * ENGLISH</span>
+              <span> * HINDI</span>
+              <span> * TELUGU</span>
             </div>
           </div>
         ) : (
           <div className="h-12 rounded-md ">
-          <li className="font-bold text-sm pt-4 ml-6 olx-font flex">
-            ENGLISH 
-            <img onClick={() => setLanguage(true)}
-            className="w-6 h-6 cursor-pointer" src="../down-arrow.png" />
-         
-          </li> 
+            <li className="font-bold text-sm pt-4 ml-6 olx-font flex">
+              ENGLISH
+              <img
+                onClick={() => setLanguage(true)}
+                className="w-6 h-6 cursor-pointer"
+                src="../down-arrow.png"
+              />
+            </li>
           </div>
-        )
-       }
-      
-     
-     <span className="ml-5 mt-3 font-bold text-sm">{user  ? `Welcome-${user?.displayName}`  : ''}</span>
-      
-     { user ?
-    <div>
-         <li className="cursor-pointer font-bold text-sm pt-4 ml-10 olx-font underline"
-      >
-       <span  onClick={() => {handleLogout()}}>
-       Logout 
-       </span>
-            
-          </li>
-    </div>
-    :
+        )}
 
-   
-     <li className="font-bold text-sm pt-4 ml-10 olx-font underline">
-     <Link to="/login">
-          Login
-          </Link>
-        </li>
-    
-    }
-    
-    
-   
-    
+        <span className="ml-5 mt-3 font-bold text-sm">
+          {user ? `Welcome-${user?.displayName}` : ""}
+        </span>
+
+        {user ? (
+          <div>
+            <li className="cursor-pointer font-bold text-sm pt-4 ml-10 olx-font underline">
+              <span
+                onClick={() => {
+                  handleLogout();
+                }}
+              >
+                Logout
+              </span>
+            </li>
+          </div>
+        ) : (
+          <li className="font-bold text-sm pt-4 ml-10 olx-font underline">
+            <Link to="/login">Login</Link>
+          </li>
+        )}
+
         <li className="font-bold pt-2 ml-12">
           <img src="/sell-logo.png" />
         </li>
@@ -187,4 +181,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar
+export default Navbar;

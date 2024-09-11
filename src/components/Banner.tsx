@@ -1,4 +1,4 @@
-import { ads } from "../constants/banner.ts";
+import { ads } from "../constants/banner.ts"
 
 export const Banner = ({ banner, isLong }: any) => {
   {
@@ -10,9 +10,9 @@ export const Banner = ({ banner, isLong }: any) => {
       <div className="h-[264px] w-full object-center mt-5 justify-center">
         <img className="h-[230px] w-full justify-center" src={banner} />
       </div>
-    );
+    )
   }
-};
+}
 
 //middle custom banner
 export const LongBanner = () => {
@@ -39,8 +39,8 @@ export const LongBanner = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const PromotedContent = () => {
   return (
@@ -54,8 +54,8 @@ export const PromotedContent = () => {
            <span className="olx-font font-bold text-sm text-gray-600 hover:underline cursor-pointer">{ad.text}</span>
            </div>
           </div>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
