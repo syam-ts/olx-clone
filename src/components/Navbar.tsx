@@ -16,10 +16,10 @@ const Navbar = () => {
   
 
   if (!authContext ) {
-    return null;
+    return;
   }
   
-  console.log('Print this')
+ 
 
   if (!firebaseContext ) {
     return null;
@@ -126,7 +126,7 @@ const Navbar = () => {
        
        {
         language ? (
-          <div className="h-48  bg-gray-200 rounded-md relative w-48">
+          <div className="h-48 bg-gray-200 rounded-md relative w-48">
           <li className="font-bold text-sm pt-4 ml-6 olx-font flex">
             ENGLISH
              <img className="w-6 h-6 cursor-pointer"
@@ -141,7 +141,7 @@ const Navbar = () => {
             </div>
           </div>
         ) : (
-          <div className="h-12 rounded-md relative w-48">
+          <div className="h-12 rounded-md ">
           <li className="font-bold text-sm pt-4 ml-6 olx-font flex">
             ENGLISH 
             <img onClick={() => setLanguage(true)}
@@ -152,17 +152,34 @@ const Navbar = () => {
         )
        }
       
-     <div>
-     <span className="underline font-bold text-sm">{user  ? `Welcome-${user?.displayName}`  : 'Login'}</span>
+     
+     <span className="ml-5 mt-3 font-bold text-sm">{user  ? `Welcome-${user?.displayName}`  : ''}</span>
+      
+     { user ?
+    <div>
+         <li className="cursor-pointer font-bold text-sm pt-4 ml-10 olx-font underline"
+      >
+       <span  onClick={() => {handleLogout()}}>
+       Logout 
+       </span>
+            
+          </li>
+    </div>
+    :
 
-     </div>
-     { user && <span className="font-bold"
-     onClick={handleLogout}
-     >Logout</span>}
-        <li className="font-bold  text-sm pt-4 ml-10 olx-font underline">
+   
+     <li className="font-bold text-sm pt-4 ml-10 olx-font underline">
+     <Link to="/login">
           Login
+          </Link>
         </li>
-        <li className="font-bold pt-2 ml-1">
+    
+    }
+    
+    
+   
+    
+        <li className="font-bold pt-2 ml-12">
           <img src="/sell-logo.png" />
         </li>
       </ul>
