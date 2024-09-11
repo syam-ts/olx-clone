@@ -115,7 +115,7 @@ export const products: Products[] = [
     },
     {
       "id": 15,
-      "image": "https://apollo.olx.in/v1/files/41a0vgj1802i1-IN/image;s=300x600;q=60",
+      "image": "https://apollo.olx.in/v1/files/ce1urr87h5rv3-IN/image;s=300x600;q=60",
       "price": "32000",
       "reason": "Selling my old bike",
       "place": "CHENNAI, TAMIL NADU",
@@ -187,7 +187,7 @@ export const products: Products[] = [
     },
     {
       "id": 24,
-      "image": "https://apollo.olx.in/v1/files/163kol3njv4j2-IN/image;s=300x600;q=60",
+      "image": "https://apollo.olx.in/v1/files/846mcq14rrm62-IN/image;s=300x600;q=60",
       "price": "25000",
       "reason": "Selling my old gaming keyboard",
       "place": "CHANDIGARH, PUNJAB",

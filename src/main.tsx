@@ -3,6 +3,8 @@ import App from './App.tsx'
 import Body from './components/Body.tsx'
 import Product from './components/Product.tsx'
 import About from './components/About.tsx'
+import Signup from './components/Signup.tsx'
+import Login from './components/Login.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <About />
+  },
+  {
+    path: "/signup",
+    element: <Signup /> 
+  },
+  {
+    path: "/login",
+    element: <Login />
   }
 ])
 
