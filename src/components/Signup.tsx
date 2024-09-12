@@ -12,14 +12,14 @@ export default function Signup() {
   const [phone, setPhone] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState<string | null>(null)
-  const firebaseApp = useContext(FirebaseContext)
+  const FirebaseApp = useContext(FirebaseContext)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    if (firebaseApp) {
-      const auth = getAuth(firebaseApp)
-      const firestore = getFirestore(firebaseApp)
+    if (FirebaseApp) {
+      const auth = FirebaseApp.auth
+      const firestore = getFirestore(FirebaseApp.app)
       
       try {
         const result = await createUserWithEmailAndPassword(auth, email, password)
@@ -46,12 +46,12 @@ export default function Signup() {
   return (
     <div>
       <div className="signupParentDiv">
-        <img width="200px" height="200px" src={Logo} alt="Logo" />
+        <img className="mx-auto" width="180px" height="200px" src={Logo} alt="Logo" />
         <form onSubmit={handleSubmit}>
-          <label htmlFor="fname">Username</label>
+          <label className="ml-9" htmlFor="fname">Username</label>
           <br />
           <input
-            className="input"
+            className="input border border-black focus:border-2 ml-9"
             type="text"
             id="fname"
             name="name"
@@ -60,10 +60,10 @@ export default function Signup() {
             onChange={(e) => setUserName(e.target.value)}
           />
           <br />
-          <label htmlFor="fname">Email</label>
+          <label className="ml-9" htmlFor="fname">Email</label>
           <br />
           <input
-            className="input"
+            className="input border border-black ml-9 focus:border-2"
             type="email"
             id="fname"
             name="email"
@@ -72,10 +72,10 @@ export default function Signup() {
             onChange={(e) => setEmail(e.target.value)}
           />
           <br />
-          <label htmlFor="lname">Phone</label>
+          <label className="ml-9" htmlFor="lname">Phone</label>
           <br />
           <input
-            className="input"
+            className="input border border-black ml-9 focus:border-2"
             type="number"
             id="lname"
             name="phone" 
@@ -83,10 +83,10 @@ export default function Signup() {
             onChange={(e) => setPhone(e.target.value)}
           />
           <br />
-          <label htmlFor="lname">Password</label>
+          <label className="ml-9" htmlFor="lname">Password</label>
           <br />
           <input
-            className="input"
+            className="input border border-black ml-9 focus:border-2"
             type="password"
             id="lname"
             name="password"

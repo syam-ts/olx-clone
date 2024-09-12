@@ -3,6 +3,7 @@ import { FirebaseContext } from '../strore/FirebaseContext'
 import Logo from '../olx-logo.png'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -15,7 +16,7 @@ export default function Login() {
     if (auth) {
       try {
         await signInWithEmailAndPassword(auth, email, password)
-        navigate('/')
+        navigate('/body')
       } catch (error: any) {
         alert(`Error: ${error.message}`)
       }
@@ -27,12 +28,12 @@ export default function Login() {
   return (
     <div>
       <div className="loginParentDiv">
-        <img width="200px" height="200px" src={Logo} alt="Logo" />
+        <img className="mx-auto p-3" width="200px" height="200px" src={Logo} alt="Logo" />
         <form onSubmit={handleLogin}>
-          <label htmlFor="email">Email</label>
+          <label className="ml-12" htmlFor="email">Email</label>
           <br />
           <input
-            className="input"
+            className="input border ml-12 border-black focus:border-2"
             type="email"
             id="email"
             name="email"
@@ -41,10 +42,10 @@ export default function Login() {
             required
           />
           <br />
-          <label htmlFor="password">Password</label>
+          <label className="ml-12" htmlFor="password">Password</label>
           <br />
           <input
-            className="input"
+            className="input border ml-12 border-black focus:border-2"
             type="password"
             id="password"
             name="password"
@@ -55,6 +56,13 @@ export default function Login() {
           <br />
           <br />
           <button type="submit">Login</button>
+          <br /> 
+          <br /> 
+          <div className="text-center"> 
+          <Link to="/signup">
+          <span className="bg-white underline text-blue-700">Signup</span>
+          </Link>
+          </div>
         </form>
       </div>
     </div>
