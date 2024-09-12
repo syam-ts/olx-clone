@@ -21,7 +21,7 @@ function Body() {
             <div>
             
               <img
-                className="w-8 h-8 text-white bg-white rounded-full absolute ml-60 mt-2"
+                className="w-8 h-8 text-white bg-white rounded-full   ml-60 mt-2"
                 src="/heart (1).png"
               />
                 <img

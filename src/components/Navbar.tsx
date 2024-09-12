@@ -1,6 +1,6 @@
-import { useState, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { AuthContext, FirebaseContext } from "../strore/FirebaseContext";
+import { useState, useContext } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { AuthContext, FirebaseContext } from "../strore/FirebaseContext" 
 
 const Navbar = () => {
   const [location, setLocation] = useState(false);
@@ -123,7 +123,7 @@ const Navbar = () => {
         </li>
 
         {language ? (
-          <div className="h-48 bg-gray-200 rounded-md relative w-44">
+          <div className="h-48 bg-gray-200 rounded-md relative w-40">
             <li className="font-bold text-sm pt-4 ml-6 olx-font flex">
               ENGLISH
               <img
@@ -139,7 +139,7 @@ const Navbar = () => {
             </div>
           </div>
         ) : (
-          <div className="h-12 rounded-md ">
+          <div className="h-12 rounded-md w-40">
             <li className="font-bold text-sm pt-4 ml-6 olx-font flex">
               ENGLISH
               <img
@@ -151,8 +151,9 @@ const Navbar = () => {
           </div>
         )}
 
-        <span className="ml-5 mt-3 font-bold text-sm">
-          {user ? `Welcome-${user?.displayName}` : ""}
+        <span className="ml-5 mt-3 olx-font text-sm underline hover:text-red-600 cursor-pointer">
+            {user ? `Welcome ${user?.displayName}` : ""} 
+         
         </span>
 
         {user ? (
